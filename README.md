@@ -221,8 +221,6 @@ def CORRELATION(df1,df2):
 
 本次实验所要求的内容并不复杂，难就难在代码实现上，由于没有什么基础可言，90%的时间都拿去搜索各种文档恶补相关知识去了，可谓是受益匪浅，了解到了Python中的Numpy库以及Pandas库，也在不断捣鼓的过程中摸索出了一些相通的方法，第一次将项目推到GitHub上，也开始意识到要对自己写出的代码负责，这份沉甸甸的责任感使我不断优化自身代码，虽然学习Git语法也花费了我不少时间，整个实验花费了远多于以往实验的精力和时间，但结果总归是好的，相信接下来的实验会更加有的放矢更加得心应手，期间非常感谢彭老师的悉心指导
 
-+ 
-
 # 实验二《数据统计和可视化》
 
 ##  小组信息
@@ -1011,7 +1009,7 @@ def plot(k, assignment, center):
 
 ### [# pandas取dataframe特定行/列](https://www.cnblogs.com/nxf-rabbit75/p/10105271.html#auto-id-0)
 
-### [#类半径（吴富乐同学的GitHub）](https://github.com/Chimaeras/Data_Mining_ex)
+### [# 类半径（吴富乐同学的GitHub）](https://github.com/Chimaeras/Data_Mining_ex)
 
 ## 总结
 
