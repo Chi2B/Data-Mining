@@ -149,3 +149,4 @@ print(Nearest(corr_result))
 
 # 保存txt文件（⑥）
 np.savetxt('Nearest.txt', Nearest(corr_result), fmt='%d', delimiter="\t")
+# np.savetxt('归一化数据矩阵.txt', df1, fmt='%f', delimiter="\t")

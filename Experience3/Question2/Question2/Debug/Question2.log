@@ -1,0 +1,7 @@
+﻿  Question2.cpp
+d:\data mining\experience3\question2\question2\question2.cpp(48): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+d:\data mining\experience3\question2\question2\question2.cpp(75): warning C4018: “<”: 有符号/无符号不匹配
+d:\data mining\experience3\question2\question2\question2.cpp(115): warning C4018: “<”: 有符号/无符号不匹配
+d:\data mining\experience3\question2\question2\question2.cpp(141): warning C4018: “<”: 有符号/无符号不匹配
+d:\data mining\experience3\question2\question2\question2.cpp(162): warning C4018: “<”: 有符号/无符号不匹配
+  Question2.vcxproj -> D:\DATA MINING\Experience3\Question2\Debug\Question2.exe
