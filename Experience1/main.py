@@ -35,7 +35,7 @@ data1_noDup["Gender"] = data1_noDup["Gender"].replace(['male', 'female'], ['boy'
 data2 = pd.read_csv('./一.数据源2-逗号间隔.txt')
 data2_noDup = data2.drop_duplicates('ID').copy()
 
-# 数据清洗
+    # 数据清洗
 # ①校正身高，全部变为cm
 data2_temp2 = data2_noDup[data2_noDup["Height"] < 10]['Height'].to_numpy()      # 查询出Height < 10的数据并以array形式返回用于接下来的replace
 data2_noDup["Height"] = data2_noDup["Height"].replace(data2_temp2, 100*data2_temp2)

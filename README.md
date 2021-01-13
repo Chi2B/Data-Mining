@@ -1051,6 +1051,14 @@ def plot(k, assignment, center):
 
 - **main.py**：源代码
 
+
+
+sigmoid.png
+
+
+
+![Q1聚类2](https://github.com/Chi2B/Image/blob/main/sigmoid.png?raw=true)
+
 ### 函数说明
 
 ```python
