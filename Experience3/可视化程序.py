@@ -11,7 +11,7 @@ plt.rcParams['font.sans-serif']=['SimHei']
 color = ['gold', 'blue', 'brown', 'black', 'green', 'purple']
 
 # 导入数据（在这里改变要聚成几类，可相应改变为result2、result3、result4、result5）
-data = pd.read_csv('./result2.csv')
+data = pd.read_csv('./result5.csv')
 
 # 初始化
 k = max(data['Class'])  # k为类数
@@ -25,6 +25,7 @@ for i in range(k):
     center = [temp_pd_eachClass.iat[0,2],temp_pd_eachClass.iat[0,3]]
     list_center.append(center)
     list_Class.append(list_eachClass)
+
 
 # 定义半径
 radius = np.zeros(k)

@@ -956,16 +956,16 @@ def plot(k, assignment, center):
 
 ##### Question1.cpp(Question.cpp):
 
-| 调用的函数        | 函数说明                           |
-| ----------------- | ---------------------------------- |
-| ifstream::open()  | 指定模式打开文件                   |
-| istream::peek()   | 查看下一个字符                     |
-| ios::eof()        | 查看是否为空                       |
-| istream::get      | 从流中提取字符，作为未格式化的输入 |
-| ifstream::close   | 关闭文件                           |
-| vector::size      | 返回容器大小                       |
-| vector::push_back | 在最后添加元素                     |
-| vector::clear     | 清除内容                           |
+| 函数说明                           | 调用的函数        |
+| ---------------------------------- | ----------------- |
+| 指定模式打开文件                   | ifstream::open()  |
+| 查看下一个字符                     | istream::peek()   |
+| 查看是否为空                       | ios::eof()        |
+| 从流中提取字符，作为未格式化的输入 | istream::get      |
+| 关闭文件                           | ifstream::close   |
+| 返回容器大小                       | vector::size      |
+| 在最后添加元素                     | vector::push_back |
+| 清除内容                           | vector::clear     |
 
 
 
@@ -1014,4 +1014,103 @@ def plot(k, assignment, center):
 ## 总结
 
 本次实验主要目的是实现k-means算法及可视化，算法有c++语言完成，可视化有python语言完成，第一题训练集为实验二的z-score规范化后的学生数据，第二题有训练集以及测试集，需要训练完模型后再进行测试集的测试，题目二最终导出各聚类的情况保存到csv中，可视化程序用导出的csv文件作为数据集进行相应的可视化，难点在如何绘制出类半径，其中借鉴了吴富乐同学的python代码，特别鸣谢，由第二题的可视化图像可以看出题目所给数据集分成2类会比较合适，其他类都出现分类过多、区限不明显的问题，综合考虑我认为分成2类会更合适
+
+# 实验四  《逻辑回归二分类》
+
+##  小组信息
+
++ 组员信息：陈泽彬（组长）、李华辉、冼海俊
++ 指导老师：彭伟龙
+
+## 作业题目和内容
+
+### **题目**
+
+学习sigmoid函数和逻辑回归算法。将实验三.2中的样例数据用聚类的结果打标签{0，1}，并用逻辑回归模型拟合。
+
+1. 学习并画出sigmoid函数
+2. 设计梯度下降算法，实现逻辑回归模型的学习过程。
+3. 根据给定数据（实验三.2），用梯度下降算法进行数据拟合，并用学习好的模型对(2,6)分类。
+
+### 注意
+
+对2,3实现有难度的同学，可以直接调用sklearn中LogisticRegression进行学习
+
+## 作业环境
+
++ Windows10
++ Anaconda Python3.8.3（IDE为pycharm）
+
+### 文件说明
+
+- **sigmoid.png**：sigmoid函数导出
+
+- **result2.csv**：Qusetion2中CPP代码导出的分成不同类的数据，用于可视化程序.py，数据样式如下表
+
+  | X       | Y       | Center_X            | Center_Y            | Class      |
+  | ------- | ------- | ------------------- | ------------------- | ---------- |
+  | 数据的x | 数据的y | 数据所在类的质心的x | 数据所在类的质心的y | 数据所在类 |
+
+- **main.py**：源代码
+
+### 函数说明
+
+```python
+def Sigmoid(x):
+    return 1.0 / (1.0 + np.exp(-x))
+```
+
+$$
+f\left( x \right) =\frac{1}{1+e^{-x}}
+$$
+
+### 调用的函数库以及涉及哪些技术
+
+#### 函数库
+
+| 调用的函数库 |
+| ------------ |
+| pandas       |
+| matplotlib   |
+| numpy        |
+| sklearn      |
+
+#### 涉及的技术
+
+| 调用的函数                                     | 函数说明                                                     |
+| ---------------------------------------------- | ------------------------------------------------------------ |
+| numpy.arange                                   | 函数返回一个有终点和起点的固定步长的排列                     |
+| matplotlib.pyplot.plot                         | 将y和x绘制为线条、标记                                       |
+| matplotlib.pyplot.axvline                      | 坐标轴上加一条竖直的线                                       |
+| matplotlib.pyplot.axhline                      | 坐标轴上加一条横向的线                                       |
+| matplotlib.pyplot.yticks                       | y轴标度                                                      |
+| matplotlib.pyplot.ylim                         | y轴范围                                                      |
+| matplotlib.pyplot.show                         | 显示所有打开的图像                                           |
+| pandas.read_csv                                | 将逗号分隔值（csv）文件读取到DataFrame中                     |
+| numpy.array                                    | 创建arrary                                                   |
+| pandas.DataFrame.to_numpy                      | 将DataFrame转换为NumPy数组                                   |
+| sklearn.preprocessing.StandardScaler           | 去均值和方差归一化                                           |
+| sklearn.preprocessing.StandardScaler.fit       | 用于计算训练数据的均值和方差，  后面就会用均值和方差来转换训练数据 |
+| sklearn.preprocessing.StandardScaler.transform | 进行转换，把训练数据转换成标准的正态分布                     |
+| linear_model.LogisticRegression                | 根据现有数据对分类边界线建立回归公式，以此进行分类           |
+| linear_model.LogisticRegression.fit            | 根据给出的训练数据来训练模型。                               |
+| linear_model.LogisticRegression.predict_proba  | 概率估计                                                     |
+
+## 难题与解决
+
+### [#sklearn中predict()与predict_proba()用法区别](https://www.cnblogs.com/mrtop/p/10309083.html)
+
+### [#scikit-learn LogisticRegression原理及实例](https://blog.csdn.net/qq_37212752/article/details/83187535)
+
+### [#preprocessing.StandardScaler中fit、fit_transform、transform的区别](https://blog.csdn.net/u011734144/article/details/84066784)
+
+### [#Sklearn实现逻辑回归](https://www.cnblogs.com/sddai/p/9571305.html)
+
+### [#Python: Numpy: 将zip对象转换成矩阵](https://blog.csdn.net/lcqin111/article/details/83314268)
+
+### [#逻辑回归（Logistic Regression）](https://blog.csdn.net/liulina603/article/details/78676723)
+
+## 总结
+
+本次实验主要是完成逻辑回归算法，直接调用sklearn中LogisticRegression进行学习，其算法思想以及LogisticRegression的用法在[#逻辑回归（Logistic Regression）](https://blog.csdn.net/liulina603/article/details/78676723)中有详细的介绍，其调用代码的主要流程为归一化——计算均值和方差——标准化——进行训练建立回归公式进行分类，最后的输出结果为[[0.00000017 0.99999983]]，它代表（2，6）属于第一类的概率为0.00000017 ，属于第二类的概率为0.99999983，所以（2，6）属于第二类，这与实验三的结果吻合，由于逻辑回归只能处理两类，所以只能调用实验三的result2结果，其他的聚类结果不能调用
 
